@@ -8,11 +8,14 @@ moduleForAcceptance('Acceptance | login');
 test('send post request', function(assert) {
   visit('/login');
 
+  andThen(function() {
+    andThen(() => assert.equal(find('.log').text(), ''));
+  });
   click('button');
-
   andThen(function() {
     andThen(() => assert.equal(find('.log').text(), 'POST /api/destinations'));
   });
+
 });
 
 test('visiting /login', function(assert) {
