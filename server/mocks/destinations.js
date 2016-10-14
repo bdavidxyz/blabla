@@ -1,4 +1,4 @@
-/*jshint node:true*/
+  /*jshint node:true*/
 module.exports = function(app) {
   var express = require('express');
   var destinationsRouter = express.Router();
@@ -10,7 +10,7 @@ module.exports = function(app) {
   });
 
   destinationsRouter.post('/', function(req, res) {
-    res.status(201).end();
+    res.json({}).status(201).end();
   });
 
   destinationsRouter.get('/:id', function(req, res) {

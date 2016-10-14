@@ -3,6 +3,18 @@ import moduleForAcceptance from 'blabla/tests/helpers/module-for-acceptance';
 
 moduleForAcceptance('Acceptance | login');
 
+
+
+test('send post request', function(assert) {
+  visit('/login');
+
+  click('button');
+
+  andThen(function() {
+    andThen(() => assert.equal(find('.log').text(), 'POST /api/destinations'));
+  });
+});
+
 test('visiting /login', function(assert) {
   visit('/login');
 

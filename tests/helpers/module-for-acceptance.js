@@ -13,6 +13,8 @@ export default function(name, options = {}) {
       if (options.beforeEach) {
         return options.beforeEach.apply(this, arguments);
       }
+
+      $(".log").text("");
     },
 
     afterEach() {
